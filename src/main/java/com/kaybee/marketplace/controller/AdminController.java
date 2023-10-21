@@ -72,7 +72,7 @@ public class AdminController {
     //product section
     @GetMapping("/admin/products")
     public String getProduct(Model model){
-        model.addAttribute("products", productService.getAllProduct());
+        model.addAttribute("products", productService.getAllProducts());
         return "products";
     }
 
@@ -80,6 +80,7 @@ public class AdminController {
     public String addProduct(Model model){
         model.addAttribute("productDTO", new ProductDTO());
         model.addAttribute("categories", categoryService.getAllCategory());
+
         return "productsAdd";
     }
 

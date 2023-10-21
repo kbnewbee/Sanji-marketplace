@@ -27,7 +27,7 @@ public class HomeController {
     @GetMapping("/shop")
     public String shop(Model model) {
         model.addAttribute("categories", categoryService.getAllCategory());
-        model.addAttribute("products", productService.getAllProduct());
+        model.addAttribute("products", productService.getAllProducts());
         model.addAttribute("cartCount", GlobalData.cart.size());
 
         return "shop";
@@ -36,7 +36,7 @@ public class HomeController {
     @GetMapping("/shop/category/{id}")
     public String shopByCategory(@PathVariable int id, Model model) {
         model.addAttribute("categories", categoryService.getAllCategory());
-        model.addAttribute("products", productService.getAllProductByCategoryid(id));
+        model.addAttribute("products", productService.getAllProductsByCategoryId(id));
         model.addAttribute("cartCount", GlobalData.cart.size());
 
         return "shop";
